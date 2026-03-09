@@ -155,6 +155,29 @@ workflow:
       targetHandle: target
       type: custom
       zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: list-operator
+        targetType: llm
+      id: 1772940895166-source-1773069576458-target
+      source: '1772940895166'
+      sourceHandle: source
+      target: '1773069576458'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1773069576458-source-1772942717337-target
+      source: '1773069576458'
+      sourceHandle: source
+      target: '1772942717337'
+      targetHandle: target
+      type: custom
+      zIndex: 0
     nodes:
     - data:
         selected: false
@@ -285,11 +308,11 @@ workflow:
       height: 92
       id: '1772940895166'
       position:
-        x: 814
-        y: 212
+        x: 682.998782465887
+        y: 249.8929141627599
       positionAbsolute:
-        x: 814
-        y: 212
+        x: 682.998782465887
+        y: 249.8929141627599
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -324,11 +347,11 @@ workflow:
       height: 92
       id: '1772940933896'
       position:
-        x: 704
-        y: 20
+        x: 669.3550499083337
+        y: -74.19095806171758
       positionAbsolute:
-        x: 704
-        y: 20
+        x: 669.3550499083337
+        y: -74.19095806171758
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -346,11 +369,11 @@ workflow:
       height: 132
       id: '1772941134790'
       position:
-        x: 1046
-        y: 0
+        x: 1027.5948702638022
+        y: -148.32369257994606
       positionAbsolute:
-        x: 1046
-        y: 0
+        x: 1027.5948702638022
+        y: -148.32369257994606
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -474,11 +497,11 @@ workflow:
       height: 88
       id: '1772942717337'
       position:
-        x: 1408
-        y: 37
+        x: 1595.8983952204555
+        y: 142.22072778871726
       positionAbsolute:
-        x: 1408
-        y: 37
+        x: 1595.8983952204555
+        y: 142.22072778871726
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -507,18 +530,69 @@ workflow:
       height: 140
       id: '1772954581178'
       position:
-        x: 1750
-        y: 11
+        x: 2021.363997759796
+        y: -148.32369257994606
       positionAbsolute:
-        x: 1750
-        y: 11
+        x: 2021.363997759796
+        y: -148.32369257994606
       selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 242
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1772900154060'
+          - user_prompt
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: Gemma
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        prompt_template:
+        - id: 02f815b5-9136-4ecc-8b80-183c95af0e04
+          role: system
+          text: '# PROVIDED MATERIALS
+
+            User Input Image {{#1772940895166.result#}}
+
+
+            # ROLE & TASK
+
+            You are an image content analysis. Analyse the provided image and create
+            a holistic description of the images for LLMs context providing
+
+
+            # ANALYSIS PRINCIPLES
+
+            - Focus on the meaningful insight of images
+
+            - Describe how many objects are inside the images
+
+            '
+        selected: false
+        title: LLM 2
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1773069576458'
+      position:
+        x: 1163.7062425298286
+        y: 367.83287509016014
+      positionAbsolute:
+        x: 1163.7062425298286
+        y: 367.83287509016014
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
     viewport:
-      x: -529.7
-      y: 395.8
-      zoom: 0.7
+      x: -795.651000022088
+      y: 277.5005992634955
+      zoom: 0.8040888484979262
   rag_pipeline_variables: []
