@@ -1,0 +1,17 @@
+[project]
+name = "one-api"
+version = "0.1.0"
+description = "ONE API service for AI-agent integrations"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "fastapi>=0.110,<0.111",
+  "uvicorn[standard]>=0.29,<0.31",
+  "pydantic-settings>=2.2,<3.0"
+]
+
+[tool.uvicorn]
+factory = false
+host = "127.0.0.1"
+port = 8000
+reload = true

@@ -1,0 +1,34 @@
+## ArticleContent
+ArticleMeta
+(from RSS parse)
+title: string
+url: string
+pub_date: datetime
+description: string
+author: string
+tags[ ]: string[]
+source_name: string
+guid: string
+
+
+## ArticleContent
+(from HTML scrape)
+body_text: string
+lead_paragraph: string
+images[ ]: {url, alt}
+videos[ ]: {url, type}
+word_count: int
+reading_time: int
+og_title: string
+og_description: strin
+
+## ArticleSummary
+(output per-article)
+title: string
+summary: string
+key_points[ ]
+sentiment: enum
+relevance_score
+source + url
+pub_date
+media_count: in
