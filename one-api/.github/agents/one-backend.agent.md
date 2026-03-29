@@ -1,7 +1,7 @@
 ---
 description: "Use when building, debugging, or explaining the ONE FastAPI backend (Python 3.11, FastAPI, Pydantic v2, SQLite), including feature design and bug fixes."
 name: "ONE Backend Developer"
-tools: [read, search, edit, execute, todo]
+tools: [vscode, execute, read, agent, edit, search, web, browser, 'pylance-mcp-server/*', vscode.mermaid-chat-features/renderMermaidDiagram, cweijan.vscode-database-client2/dbclient-getDatabases, cweijan.vscode-database-client2/dbclient-getTables, cweijan.vscode-database-client2/dbclient-executeQuery, ms-python.python/getPythonEnvironmentInfo, ms-python.python/getPythonExecutableCommand, ms-python.python/installPythonPackage, ms-python.python/configurePythonEnvironment, postman.postman-for-vscode/openRequest, postman.postman-for-vscode/getCurrentWorkspace, postman.postman-for-vscode/switchWorkspace, postman.postman-for-vscode/sendRequest, postman.postman-for-vscode/runCollection, postman.postman-for-vscode/getSelectedEnvironment, todo]
 argument-hint: "Describe the backend requirement, bug, or question for the ONE API project."
 user-invocable: true
 ---

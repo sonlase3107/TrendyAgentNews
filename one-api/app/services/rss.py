@@ -1,8 +1,11 @@
 import re
+import ssl
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
+
+import certifi
 
 from app.core.db import get_connection
 from app.core.exceptions import RSSException
@@ -14,6 +17,8 @@ _EPOCH = datetime(1970, 1, 1, tzinfo=timezone.utc)
 
 class RSSService:
     """Business logic for RSS feed operations."""
+
+    _SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
 
     def list_topics(self) -> list[TopicRecord]:
         """Return all active topics stored in the database.
@@ -89,12 +94,14 @@ class RSSService:
         Raises :class:`RSSException` on network or XML parse failures.
         """
         try:
-            with urllib.request.urlopen(url, timeout=10) as response:
+            with urllib.request.urlopen(
+                url, timeout=10, context=self._SSL_CONTEXT
+            ) as response:
                 raw_bytes = response.read()
         except Exception as exc:
             raise RSSException(f"Failed to fetch feed: {exc}") from exc
 
-        try:
+        try:    
             raw_xml = raw_bytes.decode("utf-8", errors="replace")
             root = ET.fromstring(raw_xml)
         except ET.ParseError as exc:
